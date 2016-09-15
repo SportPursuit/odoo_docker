@@ -9,7 +9,6 @@
 * Splitting the process in 2 so that we have one ansible playbook that builds a docker base image ( all system packages installed ) and the other for building releases.
  * Currently it takes about 5 minutes to do a full build. Most of the time is taken up by install apt packages
 * Mounting /var/log/odoo into the container so the logs get written onto the host filesystem and we can continue to use logstash, logrotate etc
-*
 
 
 ## Setup
@@ -26,12 +25,12 @@
 
 
 ## Deploying
-**local**
+###local
 1. cd /tmp
 2. docker save -o cloud.tar odoo:cloud
 3. scp cloud-odoo:/tmp
 
-**remote**
+###remote
 1. cd /tmp
 2. docker load -i cloud.tar
 
