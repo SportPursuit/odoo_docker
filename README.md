@@ -15,13 +15,12 @@
 1. Clone all the odoo repos into one directory ( odoo, sportpursuit-odoo-modules and mr config; odoo directory needs to be cloned into 'sp_odoo' )
 2. checkout ansible branch 'odoo_docker'
 3. In the same directory as the parent odoo directory: git clone https://github.com/SportPursuit/odoo_docker.git && cd odoo_docker
-3. sh build_repos.sh
-4. cd build
+4. cd build && sh build_repos.sh
 5. Because docker doesnt follow symlinks and we need ansible to provision the image, we need to copy the relevant directories into the build directory
  * cp -R ~/sportpursuit/sportpursuit.ansible/playbooks/roles/app/odoo_docker odoo
  * cp -R ~/sportpursuit/sportpursuit.ansible/playbooks/vars_files/environment odoo/environment
  * cp -R ~/sportpursuit/sportpursuit.ansible/playbooks/vars_files/erp odoo/vars
-5. docker build -t odoo:cloud .
+6. docker build -t odoo:cloud .
 
 
 ## Deploying
