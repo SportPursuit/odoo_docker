@@ -4,7 +4,7 @@ ADD odoo/templates/sources.list /etc/apt/sources.list
 RUN apt-get clean && apt-get update && apt-get install -y \
     build-essential libssl-dev libffi-dev python-dev python-pip sudo vim less rsyslog
 
-RUN pip install ansible
+RUN pip install ansible==1.9.4
 COPY odoo /srv/
 COPY repos.tar.gz /srv/
 WORKDIR /srv
